@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="25dp"
+        android:text="Restaurant Michel Sarran"
         android:fontFamily="@font/roboto_condensed_regular"
         app:layout_constraintBottom_toTopOf="@+id/rv_command_list"
         app:layout_constraintEnd_toEndOf="parent"

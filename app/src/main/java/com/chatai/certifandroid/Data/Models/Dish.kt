@@ -1,6 +1,4 @@
-package com.chatai.certifandroid.Models
-
-import android.widget.ImageView
+package com.chatai.certifandroid.Data.Models
 
 data class  Dish(var img: String,
                       var name: String,

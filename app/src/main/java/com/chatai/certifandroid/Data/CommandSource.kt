@@ -1,7 +1,7 @@
 package com.chatai.certifandroid.Data
 
-import com.chatai.certifandroid.Models.Command
-import com.chatai.certifandroid.Models.Dish
+import com.chatai.certifandroid.Data.Models.Command
+import com.chatai.certifandroid.Data.Models.Dish
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import kotlin.collections.ArrayList
@@ -10,7 +10,7 @@ class CommandSource{
 
     companion object{
 
-        fun createCommand() : Command{
+        /*fun createCommand() : Command{
             val dateNow = LocalDateTime.now()
             
             val formatTime =  DateTimeFormatter.ofPattern("HH:mm")
@@ -22,7 +22,7 @@ class CommandSource{
             val myDishInCommand = createDataSet()
 
             return Command("Michel Sarran", myDishInCommand,hour,date)
-        }
+        }*/
 
         fun createDataSet(): ArrayList<Dish>{
             val list = ArrayList<Dish>()

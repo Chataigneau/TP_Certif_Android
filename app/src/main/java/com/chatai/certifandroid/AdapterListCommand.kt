@@ -3,7 +3,7 @@ package com.chatai.certifandroid
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.chatai.certifandroid.Models.Dish
+import com.chatai.certifandroid.Data.Models.Dish
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_command.view.*
 
