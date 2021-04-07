@@ -33,6 +33,7 @@
         android:layout_height="wrap_content"
         android:text="ChataiEats"
         android:textSize="60dp"
+        android:textColor="@color/white"
         android:layout_marginBottom="100dp"
         android:fontFamily="@font/roboto_condensed_regular"
         app:layout_constraintBottom_toBottomOf="parent"

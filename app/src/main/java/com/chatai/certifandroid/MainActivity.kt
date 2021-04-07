@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun changeView(){
-        val intent = Intent(this, CommandOverviewActivity::class.java)
+        val intent = Intent(this, OrderOverviewActivity::class.java)
         startActivity(intent)
         finish()
     }

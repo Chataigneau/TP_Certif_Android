@@ -1,5 +1,6 @@
 package com.chatai.certifandroid
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
@@ -16,11 +17,11 @@ import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_command_overview.*
 import kotlinx.coroutines.*
 
-
-class CommandOverviewActivity : AppCompatActivity() {
+class OrderOverviewActivity : AppCompatActivity() {
 
     //private val myCommand = CommandSource.createCommand()
     private val myCommandList = CommandSource.createDataSet()
+    var page : Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +39,7 @@ class CommandOverviewActivity : AppCompatActivity() {
                     //do something
                 } else {
                     Toast.makeText(
-                        this@CommandOverviewActivity,
+                        this@OrderOverviewActivity,
                         "Error Occurred: ${response.message()}",
                         Toast.LENGTH_LONG
                     ).show()
@@ -46,7 +47,7 @@ class CommandOverviewActivity : AppCompatActivity() {
 
             } catch (e: Exception) {
                 Toast.makeText(
-                    this@CommandOverviewActivity,
+                    this@OrderOverviewActivity,
                     "Error Occurred: ${e.message}",
                     Toast.LENGTH_LONG
                 ).show()
@@ -61,17 +62,12 @@ class CommandOverviewActivity : AppCompatActivity() {
             adapter = AdapterListCommand(myCommandList)
         }
 
-        vp_horizontal.adapter = AdapterViewPager(this@CommandOverviewActivity)
-        TabLayoutMediator(
-            tabDots,
-            vp_horizontal,
-            TabLayoutMediator.TabConfigurationStrategy({ tab, position ->
-
-            })
-        ).attach()
+        vp_horizontal.adapter = AdapterViewPager(this@OrderOverviewActivity)
+        TabLayoutMediator(tabDots, vp_horizontal, TabLayoutMediator.TabConfigurationStrategy { _, _ -> }).attach()
         vp_horizontal.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
+                page = position+1
                 val mSnackbar = Snackbar.make(parent_view, "Plat n° " + (position + 1), Snackbar.LENGTH_SHORT)
                 val mView: View = mSnackbar.view
                 val mTextView = mView.findViewById<View>(com.google.android.material.R.id.snackbar_text) as TextView
