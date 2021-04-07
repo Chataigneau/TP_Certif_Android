@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CertifAndroid</string>
+    <string name="mes_commandes_en_cours">Mes commandes en cours</string>
 </resources>
